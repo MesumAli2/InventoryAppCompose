@@ -29,7 +29,6 @@ import com.example.inventory.data.ItemsRepository
 class ItemEditViewModel(
     savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
-
     /**
      * Holds current item ui state
      */

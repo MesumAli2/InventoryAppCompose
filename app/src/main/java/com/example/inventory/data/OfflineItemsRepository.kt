@@ -16,4 +16,27 @@
 
 package com.example.inventory.data
 
-class OfflineItemsRepository : ItemsRepository
+import kotlinx.coroutines.flow.Flow
+
+class OfflineItemsRepository(private var itemDao: ItemDao) : ItemsRepository {
+    override fun getAllItemsStream(): Flow<List<Item>> {
+        TODO("Not yet implemented")
+    }
+
+    override fun getItemStream(id: Int): Flow<Item?> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun insertItem(item: Item) {
+    itemDao.insert(item = item)
+
+    }
+
+    override suspend fun deleteItem(item: Item) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun updateItem(item: Item) {
+        TODO("Not yet implemented")
+    }
+}
