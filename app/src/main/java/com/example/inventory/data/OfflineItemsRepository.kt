@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.Flow
 
 class OfflineItemsRepository(private var itemDao: ItemDao) : ItemsRepository {
     override fun getAllItemsStream(): Flow<List<Item>> {
-        TODO("Not yet implemented")
+     return   itemDao.getAllItems()
     }
 
     override fun getItemStream(id: Int): Flow<Item?> {
