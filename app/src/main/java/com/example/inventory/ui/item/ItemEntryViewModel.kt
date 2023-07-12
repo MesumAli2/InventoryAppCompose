@@ -86,6 +86,13 @@ fun ItemDetails.toItem(): Item = Item(
     quantity = quantity.toIntOrNull() ?: 0
 )
 
+
+fun ItemDetailsUiState.toItem(): Item = Item(
+    id = itemDetails.id,
+    name = itemDetails.name,
+    price = itemDetails.price.toDoubleOrNull() ?: 0.0,
+    quantity = itemDetails.quantity.toIntOrNull() ?: 0
+)
 fun Item.formatedPrice(): String {
     return NumberFormat.getCurrencyInstance().format(price)
 }

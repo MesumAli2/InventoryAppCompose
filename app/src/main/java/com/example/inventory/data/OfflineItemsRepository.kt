@@ -24,7 +24,7 @@ class OfflineItemsRepository(private var itemDao: ItemDao) : ItemsRepository {
     }
 
     override fun getItemStream(id: Int): Flow<Item?> {
-        TODO("Not yet implemented")
+      return  itemDao.getItem(id)
     }
 
     override suspend fun insertItem(item: Item) {
@@ -33,10 +33,10 @@ class OfflineItemsRepository(private var itemDao: ItemDao) : ItemsRepository {
     }
 
     override suspend fun deleteItem(item: Item) {
-        TODO("Not yet implemented")
+        itemDao.delete(item = item)
     }
 
     override suspend fun updateItem(item: Item) {
-        TODO("Not yet implemented")
+        itemDao.update(item = item)
     }
 }
